@@ -1,14 +1,13 @@
 import React from "react";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addStudent } from "../../slices/studentSlice";
 
-export const AddStudentForm = ({
-  name,
-  setName,
-  age,
-  setAge,
-  classroom,
-  setClassroom,
-  addStudent,
-}) => {
+export const AddStudentForm = () => {
+  const [name, setName] = useState("")
+  const [age, setAge] = useState("")
+  const [classroom, setClassroom] = useState("")
+  const dispatch = useDispatch();
   return (
     <div>
       <h1>Add Student Form</h1>
@@ -20,7 +19,7 @@ export const AddStudentForm = ({
       <input type="text" value={classroom} onChange={(e) => setClassroom(e.target.value)}></input>
       <button
         onClick={() =>
-          addStudent({ name: name, age: age, classroom: classroom })
+          dispatch(addStudent({ name: name, age: age, classroom: classroom }))
         }
       >
         Add Student
