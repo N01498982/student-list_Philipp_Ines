@@ -5,8 +5,10 @@ import { useSelector } from "react-redux";
 
 // useSelector is a hook that allows us to access the state of the store
 // useSelector returns a piece of the state tree
+// By useSelector we also subscribe to the updates of the stat
+
 export const StudentList = () => {
-  const studentList = useSelector((state) => state.students.lists);
+  const studentList = useSelector((state) => state.students.list);
   return (
     <div className="student-list">
       <table>
@@ -27,8 +29,7 @@ export const StudentList = () => {
           ))}
         </tbody>
       </table>
-      <AddStudentForm
-      />
+      <AddStudentForm />
     </div>
   );
 };

@@ -10,9 +10,9 @@ const getPosts = async () => {
 
 const syncFunction = () => {
 
-    const bob = {name: "Bob", age: 30}
+    const bob = { name: "Bob", age: 30 }
 
     console.log(bob)
-   
+
     console.log("Hello")
 }
